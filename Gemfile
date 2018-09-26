@@ -16,11 +16,13 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'knock'
 gem 'pundit'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'faker'
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-clipboard'
