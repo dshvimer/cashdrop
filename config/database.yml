@@ -1,0 +1,25 @@
+default: &default
+  username: postgres
+  password:
+  # host: localhost
+  host: postgres
+  port: 5432
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: cashdrop_development
+
+test:
+  <<: *default
+  database: cashdrop_test
+
+production:
+  <<: *default
+  database: cashdrop_production
+  username: cashdrop
+  password: <%= ENV['CASHDROP_DATABASE_PASSWORD'] %>
